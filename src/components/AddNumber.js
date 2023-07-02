@@ -19,6 +19,8 @@ const AddNumber = () => {
   const { key } = useParams();
   const [phoneNumber, setPhoneNumber] = useState("");
   const [loading, setLoading] = useState(false);
+  const [username, setUsername] = useState("");
+
   const handleFormSubmit = async () => {
     if (phoneNumber.length !== 11) {
       return toast({
@@ -29,7 +31,7 @@ const AddNumber = () => {
     }
     setLoading(true);
 
-    const sendApi = await AddNumberAPI(convertPhoneToISO(phoneNumber), key);
+    const sendApi = await AddNumberAPI(convertPhoneToISO(phoneNumber), key, username);
     setLoading(false);
     if (sendApi.success) {
       // all good
@@ -70,6 +72,14 @@ const AddNumber = () => {
                   value={phoneNumber}
                   placeholder="Enter phone number e.g 08107034669"
                   onChange={(e) => updatePhoneNumber(e.target.value)}
+                />
+                <Input
+                  mt={2}
+                  type="text"
+                  id="phone"
+                  value={username}
+                  placeholder="User name"
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </FormControl>
               <Button

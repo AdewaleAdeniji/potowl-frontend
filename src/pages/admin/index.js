@@ -4,6 +4,7 @@ import NumbersList from "../../components/NumbersList";
 import AddNumber from "../../components/AddNumber";
 import { useState } from "react";
 import UpdateNumber from "../../components/UpdateNumber";
+import TransactionsList from "../../components/TransactionsList";
 
 const AdminPage = () => {
 const [tabIndex, setTabIndex] = useState(0)
@@ -19,6 +20,7 @@ const handleTabsChange = (index) => {
             <Tab>All Numbers </Tab>
             <Tab>Add a number</Tab>
             <Tab>Update Number</Tab>
+            <Tab>Transactions</Tab>
           </TabList>
 
           <TabPanels>
@@ -30,6 +32,9 @@ const handleTabsChange = (index) => {
             </TabPanel>
             <TabPanel>
              <UpdateNumber />
+            </TabPanel>
+            <TabPanel>
+             <TransactionsList />
             </TabPanel>
           </TabPanels>
         </Tabs>

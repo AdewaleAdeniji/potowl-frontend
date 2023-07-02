@@ -81,6 +81,7 @@ const NumbersList = ({ tab }) => {
         <Thead>
           <Tr>
             <Th>Number</Th>
+            <Th>Name</Th>
             <Th>Allowed Times</Th>
             <Th>Last Bought</Th>
             <Th>Last Bought Amount</Th>
@@ -93,6 +94,7 @@ const NumbersList = ({ tab }) => {
             return (
               <Tr>
                 <Td>{num.number}</Td>
+                <Td>{num?.username || "N/A"}</Td>
                 <Td>{num.allowedTimes}</Td>
                 <Td>{moment(num.lastBought).format("HH:mm - DD/MM/YYYY")}</Td>
                 <Td>{num.lastBoughtAmount}</Td>
