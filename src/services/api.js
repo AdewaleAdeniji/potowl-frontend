@@ -1,9 +1,10 @@
 import axios from "axios";
+import configs from "../config";
 
 export const SendOTP = async (number) => {
   var config = {
     method: "get",
-    url: `http://localhost:3003/check/${number}`,
+    url: `${configs.API_BASE_URL}check/${number}`,
     headers: {},
   };
   try {
@@ -22,7 +23,7 @@ export const SendOTP = async (number) => {
 export const AddNumberAPI = async (number, key) => {
     var config = {
       method: "get",
-      url: `http://localhost:3003/add/${number}/${key}`,
+      url: `${configs.API_BASE_URL}add/${number}/${key}`,
       headers: {},
     };
     try {
@@ -42,7 +43,7 @@ export const AddNumberAPI = async (number, key) => {
 export const GetListedNumbers = async (key) => {
   var config = {
     method: "get",
-    url: `http://localhost:3003/numbers/${key}`,
+    url: `${configs.API_BASE_URL}numbers/${key}`,
     headers: {},
   };
   try {
@@ -61,7 +62,7 @@ export const GetListedNumbers = async (key) => {
 export const DisableNumber = async (key, number) => {
   var config = {
     method: "get",
-    url: `http://localhost:3003/remove/${number}/${key}`,
+    url: `${configs.API_BASE_URL}remove/${number}/${key}`,
     headers: {},
   };
   try {
@@ -80,7 +81,7 @@ export const DisableNumber = async (key, number) => {
 export const ReactivateNumber = async (key, number) => {
     var config = {
       method: "get",
-      url: `http://localhost:3003/activate/${number}/${key}`,
+      url: `${configs.API_BASE_URL}activate/${number}/${key}`,
       headers: {},
     };
     try {
@@ -99,7 +100,7 @@ export const ReactivateNumber = async (key, number) => {
 export const GetData = async (number, dataNumber, otp, network) => {
   var config = {
     method: "get",
-    url: `http://localhost:3003/buy/${number}/${dataNumber}/${otp}/${network}`,
+    url: `${configs.API_BASE_URL}buy/${number}/${dataNumber}/${otp}/${network}`,
     headers: {},
   };
   try {
