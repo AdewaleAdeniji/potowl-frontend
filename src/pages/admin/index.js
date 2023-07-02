@@ -3,6 +3,7 @@ import PageLayout from "../../components/layouts/PageLayout";
 import NumbersList from "../../components/NumbersList";
 import AddNumber from "../../components/AddNumber";
 import { useState } from "react";
+import UpdateNumber from "../../components/UpdateNumber";
 
 const AdminPage = () => {
 const [tabIndex, setTabIndex] = useState(0)
@@ -28,7 +29,7 @@ const handleTabsChange = (index) => {
               <AddNumber />
             </TabPanel>
             <TabPanel>
-              <p>two!</p>
+             <UpdateNumber />
             </TabPanel>
           </TabPanels>
         </Tabs>
